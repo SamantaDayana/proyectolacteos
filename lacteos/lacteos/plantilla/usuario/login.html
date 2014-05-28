@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{% block contenido %}
+
+<div class="inner">
+            <div class="main" >
+                <center>
+                <section id="content">
+
+
+<div class="col">
+						<h4>INTRODUZCA SU NOMBRE Y CONTRASEÑA</h4>
+						<ul>
+                            <form action="." method="POST">
+                                    {% csrf_token %}
+                                    {{ mensaje }}
+                                    {{ form.as_p }}
+                            <input type="submit" class="" value="Login">
+                            </form>
+						</ul>
+					</div>
+
+
+                </section>
+</center>                <div class="block"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,39 @@
+<!--{% extends 'base.html' %}
+{% block titulo %}
+Nuestros Libros
+{% endblock titulo %}
+{% block cuerpo %}
+	<div class="span6">
+		<h1>Ingresa</h1>
+		<p><form action="" class="hola">
+            <p>usuario</p>
+			<input type="text" required="required">
+            <p>password</p>
+			<input type="password" required="required">
+            <p></p>
+			<input type="submit">
+		</form>
+		</p>
+	</div>
+	<div class="span6" >
+	<h1></h1>
+		<P> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, distinctio, facilis, soluta, nulla at quia dignissimos sapiente eligendi voluptatibus harum totam unde sed fuga ea illo dolorum adipisci iusto officia.</P>
+	</div>
+{% endblock cuerpo %} -->
+
+{% extends 'base.html' %}
+{% block title %} Login {% endblock %}
+{% block content %}
+<form action="." method="POST">
+    {% csrf_token %}
+    {{ mensaje }}
+    {{ form.as_p }}
+    {% if next %}
+        <input type="hidden" value="{{ next }}" name="next">
+    {% else %}
+        <input type="hidden" value="/" name="next">
+    {% endif %}
+    <button class="btn btn-primary" type="submit">Acceder</button>
+    <h5>Registrate <a href="/registro/">Aqu&iacute;</a></h5>
+</form>
+{% endblock %}

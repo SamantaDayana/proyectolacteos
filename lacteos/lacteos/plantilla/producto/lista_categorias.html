@@ -1,0 +1,56 @@
+{% extends 'index.html' %}
+{% block contenido %}
+
+<div class="inner">
+            <div class="main" >
+                <section id="content">
+
+                           <section class="bottom-section" xmlns="http://www.w3.org/1999/html">
+			<div class="shell">
+				<div class="cols">
+					<div class="col">
+						<div class="newsletter">
+
+						</div>
+					</div>
+
+
+					<div class="col">
+						<ul>
+							<li>
+                            <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">{% csrf_token %}
+                               <strong class="title">
+                                        <strong>NUESTROS</strong><em>PRODUCTOS</em>
+                                    </strong><br>
+                                <ul>
+                                <a href="/categoria/nueva" class="button-2">Agregar </a>
+                                {% for dato in lista %}
+                                <li>
+                                <a href="{{ dato.id_cat }}">{{ dato.CategoriaNombre }}</a><br>
+                                <a href="/productos" class="more-btn" >Ir</a>
+
+                                </li>
+                                {% endfor %}
+                        </ul>
+                            </form>
+                            </li>
+						</ul>
+					</div>
+
+					<div class="col">
+
+					</div>
+					<div class="cl">&nbsp;</div>
+				</div>
+			</div>
+		</section>
+
+                </section>
+               <div class="block"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
